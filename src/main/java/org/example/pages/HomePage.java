@@ -64,6 +64,28 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public WebElement getFaqButton(int buttonNumber) {
+        switch(buttonNumber) {
+            case 0:
+                return getFaqButton0();
+            case 1:
+                return getFaqButton1();
+            case 2:
+                return getFaqButton2();
+            case 3:
+                return getFaqButton3();
+            case 4:
+                return getFaqButton4();
+            case 5:
+                return getFaqButton5();
+            case 6:
+                return getFaqButton6();
+            case 7:
+                return getFaqButton7();
+        }
+        return null;
+    }
+
     public WebElement getFaqButton0() {
         return driver.findElement(faqButton0);
     }
@@ -96,48 +118,34 @@ public class HomePage {
         return driver.findElement(faqButton7);
     }
 
-    public void clickFaqButton0() {
-        driver.findElement(faqButton0).click();
-    }
-
-    public void clickFaqButton1() {
-        driver.findElement(faqButton1).click();
-    }
-
-    public void clickFaqButton2() {
-        driver.findElement(faqButton2).click();
-    }
-
-    public void clickFaqButton3() {
-        driver.findElement(faqButton3).click();
-    }
-
-    public void clickFaqButton4() {
-        driver.findElement(faqButton4).click();
-    }
-
-    public void clickFaqButton5() {
-        driver.findElement(faqButton5).click();
-    }
-
-    public void clickFaqButton6() {
-        driver.findElement(faqButton6).click();
-    }
-
-    public void clickFaqButton7() {
-        driver.findElement(faqButton7).click();
-    }
-
     public void clickTopOrderButton() {
         driver.findElement(topOrderButton).click();
     }
 
-    public WebElement getBottomOrderButton() {
-        return driver.findElement(bottomOrderButton);
-    }
-
     public void clickBottomOrderButton() {
         driver.findElement(bottomOrderButton).click();
+    }
+
+    public String getTextFromFaqButtonPopUpWindow(int buttonNumber) {
+        switch(buttonNumber) {
+            case 0:
+                return getTextFromFaqButtonPopUpWindow0();
+            case 1:
+                return getTextFromFaqButtonPopUpWindow1();
+            case 2:
+                return getTextFromFaqButtonPopUpWindow2();
+            case 3:
+                return getTextFromFaqButtonPopUpWindow3();
+            case 4:
+                return getTextFromFaqButtonPopUpWindow4();
+            case 5:
+                return getTextFromFaqButtonPopUpWindow5();
+            case 6:
+                return getTextFromFaqButtonPopUpWindow6();
+            case 7:
+                return getTextFromFaqButtonPopUpWindow7();
+        }
+        return null;
     }
 
     public String getTextFromFaqButtonPopUpWindow0() {
