@@ -14,33 +14,34 @@ public class OrderPage {
         this.driver = driver;
     }
 
-    private final By nameInputField = By.xpath("/html/body/div/div/div[2]/div[2]/div[1]/input");
+    private final By nameInputField = By.cssSelector("input[type='text'][class='Input_Input__1iN_Z Input_Responsible__1jDKN'][placeholder='* Имя']");
 
-    private final By surnameInputField = By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/input");
+    private final By surnameInputField = By.cssSelector("input[type='text'][class='Input_Input__1iN_Z Input_Responsible__1jDKN'][placeholder='* Фамилия']");
 
-    private final By addressInputField = By.xpath("/html/body/div/div/div[2]/div[2]/div[3]/input");
+    private final By addressInputField = By.cssSelector("input[type='text'][class='Input_Input__1iN_Z Input_Responsible__1jDKN'][placeholder='* Адрес: куда привезти заказ']");
 
-    private final By telephoneInputField = By.xpath("/html/body/div/div/div[2]/div[2]/div[5]/input");
+    private final By telephoneInputField = By.cssSelector("input[type='text'][class='Input_Input__1iN_Z Input_Responsible__1jDKN'][placeholder='* Телефон: на него позвонит курьер']");
 
-    private final By metroStationField = By.xpath("/html/body/div/div/div[2]/div[2]/div[4]/div/div/input");
+    private final By metroStationField = By.cssSelector("input[tabindex='0'][class='select-search__input'][placeholder='* Станция метро']");
 
     private final By metroStation0Button = By.xpath("/html/body/div/div/div[2]/div[2]/div[4]/div/div[2]/ul/li[1]/button");
 
-    private final By proceedButton = By.xpath("/html/body/div/div/div[2]/div[3]/button");
+    private final By proceedButton = By.cssSelector("button[class='Button_Button__ra12g Button_Middle__1CSJM']");
 
-    private final By dateInputField = By.xpath("/html/body/div/div/div[2]/div[2]/div[1]/div[1]/div/input");
+    private final By dateInputField = By.cssSelector("input[type='text'][placeholder='* Когда привезти самокат']");
 
-    private final By rentalPeriodField = By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div[1]");
+    private final By rentalPeriodField = By.cssSelector("div[class='Dropdown-placeholder']");
 
-    private final By dayButton = By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[2]/div[1]");
+    private final By dayButton = By.cssSelector("div[class='Dropdown-option'][role='option']");
 
     private final By greyCheckbox = By.className("Checkbox_Input__14A2w");
 
-    private final By orderButton = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button[2]");
+    private final By orderButton = By.cssSelector("button[class='Button_Button__ra12g Button_Middle__1CSJM']");
 
     private final By secondOrderButton = By.xpath("//*[@id=\"root\"]/div/div[2]/div[5]/div[2]/button[2]");
 
-    private final By successPopup = By.xpath("/html/body/div/div/div[2]/div[5]/div[1]");
+    private final By successPopup = By.cssSelector("div[class='Order_Text__2broi']");
+    //
 
     public WebElement getNameInputField() {
         return driver.findElement(nameInputField);

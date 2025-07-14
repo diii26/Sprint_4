@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -58,7 +59,7 @@ public class HomePage {
 
     private final By topOrderButton = By.className("Button_Button__ra12g");
 
-    private final By bottomOrderButton = By.xpath("/html/body/div/div/div/div[4]/div[2]/div[5]/button");
+    private final By bottomOrderButton = By.cssSelector("button[class='Button_Button__ra12g Button_Middle__1CSJM']");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -123,6 +124,7 @@ public class HomePage {
     }
 
     public void clickBottomOrderButton() {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(bottomOrderButton));
         driver.findElement(bottomOrderButton).click();
     }
 

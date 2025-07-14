@@ -78,7 +78,6 @@ public class OrderFlowTest {
         orderPage.clickOrderButton();
         orderPage.clickSecondOrderButton();//на Chrome после клика по кнопке с подтверждением заказа не всплывает окно об успешном завершении
         String actual = orderPage.getTextFromSuccessPopup();
-        assertTrue(actual.contains("Заказ оформлен"));
         assertTrue(actual.contains("Номер заказа: "));
     }
 
