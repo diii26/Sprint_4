@@ -1,7 +1,10 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.pages.Constants;
 import org.example.pages.HomePage;
 import org.example.pages.OrderPage;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.JavascriptExecutor;
@@ -84,7 +87,6 @@ public class OrderFlowTest {
     @Before
     public void setup() {
         driver = getChromeDriver();
-        //driver = getFirefoxDriver();
         driver.get(Constants.url);
         homePage = new HomePage(driver);
         orderPage = new OrderPage(driver);
@@ -97,17 +99,17 @@ public class OrderFlowTest {
 
     // драйвер для браузера Chrome
     private static WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         return new ChromeDriver(options);
     }
 
     // драйвер для браузера Firefox
     private static WebDriver getFirefoxDriver() {
-        System.setProperty("webdriver.firefox.driver", "src/main/resources/geckodriver.exe");
+        WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         return new FirefoxDriver(options);
     }
 }
